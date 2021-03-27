@@ -7,25 +7,29 @@ import styles from './App.module.css';
 const App = () => {
   const items = [
     {
-    value: 'Написать приложение'
+    value: 'Написать приложение',
+    isDone: true
     },
     {
-    value: 'Прописать README'
+    value: 'Прописать README',
+    isDone: false
     },
     {
-    value: 'Пофиксить баги'
+    value: 'Пофиксить баги',
+    isDone: true
     },
     {
-    value: 'Сдать проект'
+    value: 'Сдать проект',
+    isDone: false
     }
   ];
   
   return (
-  <div className = {styles.wrap}>
-    <h1 className = {styles.title}>TODOLIST</h1>
+  <div className = { styles.wrap }>
+    <h1 className = { styles.title }>TODOLIST</h1>
     <InputItem />
     <ItemList items = { items } />
-    <Footer count = {4} />
+    <Footer count = {2} />
   </div>);
 }
 export default App; 

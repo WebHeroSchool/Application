@@ -1,0 +1,48 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
+
+.all {
+    text-decoration: none;
+}
+
+.all:hover {
+    border-bottom: 2px solid darkcyan;
+}
+
+.completed {
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+    padding: 0 4px 0 4px;
+    text-decoration: none;
+}
+
+.completed:hover {
+    border-bottom: 2px solid darkcyan;
+}
+
+.inprogress {
+    text-decoration: none;
+}
+
+.inprogress:hover {
+    border-bottom: 2px solid darkcyan;
+}
+
+.delete {
+    text-decoration: none;
+}
+
+.delete:hover {
+    border-bottom: 2px solid darkcyan;
+}

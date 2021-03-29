@@ -1,7 +1,30 @@
 .item {
     color: black;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.item:hover {
+    cursor: pointer;
 }
 
 .done {
     opacity: 0.2;
 }
+
+.container {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket {
+    opacity: 0.2;
+}
+
+.basket:hover {
+    opacity: 1;
+}
+
+

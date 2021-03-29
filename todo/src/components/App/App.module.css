@@ -1,8 +1,11 @@
 .wrap {
     margin: auto;
-    width: 300px;
+    width: 500px;
 }
 
 .title {
+    text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    color: darkcyan;
 }

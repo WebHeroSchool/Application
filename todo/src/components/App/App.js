@@ -10,34 +10,41 @@ class App extends React.Component {
       items: [
           {
               value: 'Написать приложение',
-              isDone: true
+              isDone: true,
+              id: 1
           },
           {
               value: 'Прописать README',
-              isDone: false
+              isDone: false,
+              id: 2
           },
           {
               value: 'Пофиксить баги',
-              isDone: true
+              isDone: true,
+              id: 3
           },
           {
               value: 'Сдать проект',
-              isDone: false
+              isDone: false,
+              id: 4
           }
-      ]
+      ],
+      count: 2
   };
 
-  /*onClickDone = isDone => console.log(isDone);*/
+  onClickDone = id => {
+    const newListItems = this.state.items.map(item => {
+      const newItem = { ...item };
 
-  constructor(props) {
-    super(props);
+      if (item.id === id) {
+        newItem.isDone = !item.isDone;
+      }
 
-    this.onClickDone = this.onClickDone.bind(this);
-  }
+      return newItem;
+    });
 
-  onClickDone(isDone) {
-    console.log(isDone);
-  }
+    this.setState({ items: newListItems })
+  };
 
   render() {
     return (
@@ -45,7 +52,7 @@ class App extends React.Component {
         <h1 className = { styles.title }>TODOLIST</h1>
         <InputItem />
         <ItemList items = { this.state.items } onClickDone = { this.onClickDone } />
-        <Footer count = {2} />
+        <Footer count = {this.state.count} />
       </div>);
     }
 };

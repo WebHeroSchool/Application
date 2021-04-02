@@ -11,21 +11,25 @@ class App extends React.Component {
           {
               value: 'Написать приложение',
               isDone: true,
+              isDelete: false,
               id: 1
           },
           {
               value: 'Прописать README',
-              isDone: false,
+              isDone: true,
+              isDelete: false,
               id: 2
           },
           {
               value: 'Пофиксить баги',
               isDone: true,
+              isDelete: false,
               id: 3
           },
           {
               value: 'Сдать проект',
-              isDone: false,
+              isDone: true,
+              isDelete: false,
               id: 4
           }
       ],
@@ -46,12 +50,26 @@ class App extends React.Component {
     this.setState({ items: newListItems })
   };
 
+  onClickDelete = id => {
+    const newListItems = this.state.items.map(item => {
+      const newItem = { ...item };
+      
+      if (item.id === id) {
+        newItem.isDelete = !newItem.isDelete;
+      }
+
+      return newItem;
+  });
+
+  this.setState({ items: newListItems })
+  };
+
   render() {
     return (
       <div className = { styles.wrap }>
         <h1 className = { styles.title }>TODOLIST</h1>
         <InputItem />
-        <ItemList items = { this.state.items } onClickDone = { this.onClickDone } />
+        <ItemList items = { this.state.items } onClickDone = { this.onClickDone } onClickDelete = { this.onClickDelete } />
         <Footer count = {this.state.count} />
       </div>);
     }

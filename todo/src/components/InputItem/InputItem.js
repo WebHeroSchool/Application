@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import styles from './InputItem.module.css';
+import Button from '@material-ui/core/Button';
 
 const InputItem = () => (<div className = { styles.input }>
     <TextField 
@@ -14,6 +15,9 @@ const InputItem = () => (<div className = { styles.input }>
           }}
     label="What would you want to add?"
     />
+    <Button variant="contained" color="primary" className = { styles.create }>
+      Create
+    </Button>
 </div>)
 
 export default InputItem; 

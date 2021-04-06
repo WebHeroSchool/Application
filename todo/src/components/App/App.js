@@ -50,19 +50,7 @@ class App extends React.Component {
     this.setState({ items: newListItems })
   };
 
-  onClickDelete = id => {
-    const newListItems = this.state.items.map(item => {
-      const newItem = { ...item };
-      
-      if (item.id === id) {
-        newItem.isDelete = !newItem.isDelete;
-      }
-
-      return newItem;
-  });
-
-  this.setState({ items: newListItems })
-  };
+  onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id !== id)}));
 
   render() {
     return (

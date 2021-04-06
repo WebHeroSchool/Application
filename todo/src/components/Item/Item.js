@@ -26,9 +26,6 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete, isDelete }) => (<
             <DeleteIcon
             onClick = {() => onClickDelete(id)}
             />
-            <ReplayIcon className = { styles.replay }
-            onClick = {() => onClickDelete(id)} 
-            />
         </IconButton>   
     </div>
 </div>);

@@ -4,11 +4,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 import classnames from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
-import ReplayIcon from '@material-ui/icons/Replay';
 
-const Item = ({ value, isDone, onClickDone, id, onClickDelete, isDelete }) => (<div className = { styles.container }>
+const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (<div className = { styles.container }>
     <Checkbox
-        defaultChecked
+        defaultUnchecked
         color="primary"
         inputProps={{ 'aria-label': 'secondary checkbox' }}
         onClick = {() => onClickDone(id)}
@@ -17,7 +16,6 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete, isDelete }) => (<
         classnames ({
             [styles.item]: true,
             [styles.done]: isDone,
-            [styles.delete]: isDelete
         }) 
         }>{ value }
     </span>

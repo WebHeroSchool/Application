@@ -28,4 +28,8 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (<div classN
     </div>
 </div>);
 
+Item.defaultProps = {
+    isDone: false
+};
+
 export default Item;

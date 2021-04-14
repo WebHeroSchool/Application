@@ -10,27 +10,22 @@ class App extends React.Component {
       items: [
           {
               value: 'Написать приложение',
-              isDone: false,
               id: 1
           },
           {
               value: 'Прописать README',
-              isDone: false,
               id: 2
           },
           {
               value: 'Пофиксить баги',
-              isDone: false,
               id: 3
           },
           {
               value: 'Сдать проект',
-              isDone: false,
               id: 4
           }
       ],
-      count: 4
-      
+      count: 4, 
   };
 
   onClickDone = id => {
@@ -48,6 +43,14 @@ class App extends React.Component {
   };
 
   onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id !== id)}));
+
+  onClickBox = isDone => {
+    if ( isDone === true ) {
+      this.setState(state => ({
+      clickbox: state.clickbox + 1
+      }))
+    }
+  };
 
   onClickAdd = value => {
     if ( value !== '') {
@@ -82,7 +85,7 @@ class App extends React.Component {
         onClickDone = { this.onClickDone } 
         onClickDelete = { this.onClickDelete } 
         />
-        <Footer count = {this.state.count} />
+        <Footer />
       </div>);
     }
 };

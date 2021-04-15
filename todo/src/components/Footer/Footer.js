@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Footer.module.css';
 
 const Footer = ({ count, clickbox }) => (<div className = { styles.footer }>
@@ -15,6 +16,11 @@ Task(s) left: { count }
 Footer.defaultProps = {
     count: 0,
     clickbox: 0
+};
+
+Footer.propTypes = {
+    count: PropTypes.number.isRequired,
+    clickbox: PropTypes.number.isRequired 
 };
 
 export default Footer; 

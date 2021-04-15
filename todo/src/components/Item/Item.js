@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Item.module.css';
+import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
 import classnames from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
@@ -30,6 +31,15 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (<div classN
 
 Item.defaultProps = {
     isDone: false
+};
+
+Item.propTypes = {
+    value: PropTypes.oneOfType ([
+        PropTypes.string,
+        PropTypes.number
+    ]),
+    isDone: PropTypes.bool.isRequired,
+    id: PropTypes.number.isRequired
 };
 
 export default Item;

@@ -67,7 +67,9 @@ class InputItem extends React.Component {
 };
 
 InputItem.propTypes = {
-  InputValue: PropTypes.string.isRequired
+  InputValue: PropTypes.oneOfType ([
+    PropTypes.string
+  ])
 }
 
 export default InputItem; 

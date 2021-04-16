@@ -8,15 +8,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 class Item extends React.Component {
     componentDidMount() {
-        console.log('componentDidMount');
+        this.interval = setInterval(() => console.log('Cut it out!'), 3000);
     }
 
-    componentDidUpdate() {
-        console.log('componentDidUpdate');
-    }
-    
     componentWillUnmount() {
-        console.log('componentWillUnmount');
+        clearInterval(this.interval);
     }
 
     render() {
@@ -24,7 +20,7 @@ class Item extends React.Component {
 
         return (<div className = { styles.container }>
             <Checkbox
-                defaultunchecked
+                defaultUnChecked
                 color="primary"
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
                 onClick = {() => onClickDone(id)}
@@ -37,10 +33,12 @@ class Item extends React.Component {
                 }>{ value }
             </span>
             <div>
-                <IconButton aria-label="delete" className = { styles.basket }>
-                    <DeleteIcon
+                <IconButton 
+                    aria-label="delete" 
+                    className = { styles.basket }
                     onClick = {() => onClickDelete(id)}
-                    />
+                >   
+                    <DeleteIcon />          
                 </IconButton>   
             </div>
         </div>);

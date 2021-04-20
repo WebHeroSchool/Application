@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import styles from './Footer.module.css';
 
 const Footer = ({ count, clickbox }) => (<div className = { styles.footer }>
-Task(s) left: { count }
-
+<p className = { styles.tasks }>Task(s) left: { count }</p>
 <div className = { styles.filter}>
-    <a href= "" className = { styles.all }>All</a>
-    <a href= "" className = { styles.completed }>Completed</a>
-    <a href= "" className = { styles.inprogress }>In progress</a>
+    <p className = { styles.all }>All</p>
+    <p className = { styles.completed }>Completed</p>
+    <p className = { styles.inprogress }>In progress</p>
 </div>
-<a href= "" className = { styles.delete }>Delete completed: { clickbox }</a>
+<p className = { styles.delete }>Delete completed: { clickbox }</p>
 </div>);
 
 Footer.defaultProps = {

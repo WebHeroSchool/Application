@@ -10,14 +10,17 @@
     display: flex;
     justify-content: space-between;
     width: 170px;
+    cursor: pointer;
 }
 
 .all {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .all:hover {
     border-bottom: 2px solid darkcyan;
+    cursor: pointer;
 }
 
 .completed {
@@ -25,24 +28,30 @@
     border-right: 2px solid lightgrey;
     padding: 0 4px 0 4px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .completed:hover {
     border-bottom: 2px solid darkcyan;
+    cursor: pointer;
 }
 
 .inprogress {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .inprogress:hover {
     border-bottom: 2px solid darkcyan;
+    cursor: pointer;
 }
 
 .delete {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .delete:hover {
     border-bottom: 2px solid darkcyan;
+    cursor: pointer;
 }

@@ -7,23 +7,22 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 class Item extends React.Component {
-    componentDidMount() {
+  /*  componentDidMount() {
         this.interval = setInterval(() => console.log('Cut it out!'), 3000);
     }
 
     componentWillUnmount() {
         clearInterval(this.interval);
-    }
+    }*/
 
     render() {
         const { value, isDone, onClickDone, id, onClickDelete } = this.props;
 
         return (<div className = { styles.container }>
             <Checkbox
-                defaultUnChecked
                 color="primary"
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
-                onClick = {() => onClickDone(id)}
+                onClick = {() => onClickDone(id, isDone)}
             />
             <span className = { 
                 classnames ({

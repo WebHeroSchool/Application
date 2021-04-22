@@ -20,7 +20,7 @@ class InputItem extends React.Component {
   }
 
   render() {
-    const { onClickAdd } = this.props;
+    //const { onClickAdd } = this.props;
 
     const error = this.props.isError;
     let alert;
@@ -41,17 +41,17 @@ class InputItem extends React.Component {
    
 
     <TextField 
-    id="standard-helperText"
-    style={{ margin: 8 }}
-          placeholder="Add new task"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-    label="What would you want to add?"
-    value = { this.state.InputValue }
-    onChange = {event => this.setState({ InputValue: event.target.value.toUpperCase() })}
+      id="standard-helperText"
+      style={{ margin: 8 }}
+      placeholder="Add new task"
+      fullWidth
+      margin="normal"
+      InputLabelProps={{
+        shrink: true,
+      }}
+      label="What would you want to add?"
+      value = { this.state.InputValue }
+      onChange = {event => this.setState({ InputValue: event.target.value.toUpperCase() })}
     />
 
     <Button 

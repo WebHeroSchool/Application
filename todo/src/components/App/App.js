@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-class App extends React.Component {
-  state = {
+const App = () => {
+  const initialState = {
       isError: false,
+      filter: 'all',
       items: [
           {
               value: 'Написать приложение',
@@ -25,11 +26,26 @@ class App extends React.Component {
               id: 4
           }
       ],
-      count: 4, 
+      count: 4,
+      clickbox: 0 
   };
 
-  onClickDone = id => {
-    const newListItems = this.state.items.map(item => {
+const [ items, setItems ] = useState(initialState.items);
+const [ count, setCount ] = useState(initialState.count);
+const [ isError, setIsError ] = useState(initialState.isError);
+//const [ filter, setFilter ] = useState(initialState.filter);
+const [ clickbox, setClickBox ] = useState(initialState.clickbox);
+
+useEffect(() => {
+  console.log('mount');
+});
+
+useEffect(() => {
+  console.log('update');
+});
+
+  const onClickDone = (id, isDone) => {
+    const newListItems = items.map(item => {
       const newItem = { ...item };
 
       if (item.id === id) {
@@ -39,55 +55,77 @@ class App extends React.Component {
       return newItem;
     });
 
-    this.setState({ items: newListItems })
-  };
-
-  onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id !== id)}));
-
-  onClickBox = isDone => {
-    if ( isDone === true ) {
-      this.setState(state => ({
-      clickbox: state.clickbox + 1
-      }))
+  if (isDone === false) {
+    setItems(newListItems);
+    setClickBox((clickbox) => clickbox + 1);
+  } else {
+    setItems(newListItems);
+    setClickBox((clickbox) => clickbox - 1);
     }
   };
 
-  onClickAdd = value => {
-    if ( value !== '') {
-      this.setState(state => ({ 
-        items: [
-          ...state.items,
-              {
-                value,
-                isDone: false,
-                id: state.count + 1
-              }
-        ],
-        count: state.count + 1,
-        isError: false
-      }))
-} else {
-  this.setState(state => ({
-    isError: true
-  })) 
-  }
-}
+  const onClickDelete = id => {
+    const newItems = items.filter(item => item.id !== id);  
+    
+    setItems(newItems);
+    setCount((count) => count - 1 )
+  };
 
-  render() {
+  const onClickBox = isDone => {
+        setClickBox((clickbox) => clickbox + 1);
+  };
+
+  const onClickAdd = value => {
+      const newItems = [
+        ...items,
+            {
+              value,
+              isDone: false,
+              id: count + 1
+            }            
+      ];
+
+  if ( value !== '') {
+  setIsError(false)
+  setCount((count) => count + 1); 
+  setItems(newItems)
+  } else {
+  setIsError(true)
+  }  
+};
+
+/*const filterItems = (items, filter) => {
+  if (filter === 'All') {
+    return items;
+  } else if (filter === 'Inprogress') {
+    return items.filter((item) => !item.isDone);
+  } else if (filter === 'Completed') {
+    return items.filter((item) => item.isDone);
+  }
+};
+
+const filterChange = (filter) => {
+  setFilter(filter);
+}*/
+
     return (
       <div className = { styles.wrap }>
         <h1 className = { styles.title }>TODOLIST</h1>
         <InputItem 
-          onClickAdd = { this.onClickAdd }
-          isError = { this.state.isError } 
+          onClickAdd = { onClickAdd }
+          isError = { isError } 
         />
-        <ItemList items = { this.state.items } 
-        onClickDone = { this.onClickDone } 
-        onClickDelete = { this.onClickDelete } 
+        <ItemList 
+          items = { items } 
+          onClickDone = { onClickDone } 
+          onClickDelete = { onClickDelete } 
         />
-        <Footer count = { this.state.count }/>
+        <Footer
+          count = { count }
+          clickbox = { clickbox }
+          onClickBox = { onClickBox }
+        />
       </div>);
-    }
-};
+}
 
 export default App; 

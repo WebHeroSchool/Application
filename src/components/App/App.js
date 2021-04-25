@@ -8,6 +8,7 @@ const App = () => {
   const initialState = {
       isError: false,
       filter: 'all',
+      todo: '',
       items: [
           {
               value: 'Написать приложение',
@@ -66,10 +67,18 @@ useEffect(() => {
 
   const onClickDelete = id => {
     const newItems = items.filter(item => item.id !== id);  
-    
+
     setItems(newItems);
-    setCount((count) => count - 1 )
+    setCount((count) => count - 1);
+    setClickBox((clickbox) => clickbox - 1);
   };
+
+  /*const onClickDeleteMarked = (id, isDone) => {
+      const newItemsMarked = items.filter(item => item.id !== id);
+  if (isDone === true) {
+    setItems(newItemsMarked);
+  }
+}*/
 
   const onClickBox = isDone => {
         setClickBox((clickbox) => clickbox + 1);
@@ -97,7 +106,7 @@ useEffect(() => {
 /*const filterItems = (items, filter) => {
   if (filter === 'All') {
     return items;
-  } else if (filter === 'Inprogress') {
+  } else if (filter === 'In progress') {
     return items.filter((item) => !item.isDone);
   } else if (filter === 'Completed') {
     return items.filter((item) => item.isDone);
@@ -124,6 +133,7 @@ const filterChange = (filter) => {
           count = { count }
           clickbox = { clickbox }
           onClickBox = { onClickBox }
+         /* onClickDeleteMarked = { onClickDeleteMarked }*/
         />
       </div>);
 }

@@ -73,13 +73,6 @@ useEffect(() => {
     setClickBox((clickbox) => clickbox - 1);
   };
 
-  /*const onClickDeleteMarked = (id, isDone) => {
-      const newItemsMarked = items.filter(item => item.id !== id);
-  if (isDone === true) {
-    setItems(newItemsMarked);
-  }
-}*/
-
   const onClickBox = isDone => {
         setClickBox((clickbox) => clickbox + 1);
   };
@@ -133,7 +126,6 @@ const filterChange = (filter) => {
           count = { count }
           clickbox = { clickbox }
           onClickBox = { onClickBox }
-         /* onClickDeleteMarked = { onClickDeleteMarked }*/
         />
       </div>);
 }

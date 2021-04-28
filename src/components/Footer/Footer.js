@@ -5,8 +5,7 @@ import styles from './Footer.module.css';
 const Footer = ({ count, clickbox, filterItems }) => (<div className = { styles.footer }>
 <p className = { styles.tasks }>Task(s) left: { count }</p>
 <div className = { styles.filter}>
-    <p className = { styles.all }
-    onCkick = { filterItems  }>All</p>
+    <p className = { styles.all }>All</p>
     <p className = { styles.completed }>Completed</p>
     <p className = { styles.inprogress }>In progress</p>
 </div>

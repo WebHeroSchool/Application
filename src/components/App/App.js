@@ -34,7 +34,7 @@ const App = () => {
 const [ items, setItems ] = useState(initialState.items);
 const [ count, setCount ] = useState(initialState.count);
 const [ isError, setIsError ] = useState(initialState.isError);
-//const [ filter, setFilter ] = useState(initialState.filter);
+const [ filter, setFilter ] = useState(initialState.filter);
 const [ clickbox, setClickBox ] = useState(initialState.clickbox);
 
 useEffect(() => {
@@ -103,7 +103,7 @@ useEffect(() => {
   }  
 };
 
-/*const filterItems = (items, filter) => {
+const filterItems = (items, filter) => {
   if (filter === 'All') {
     return items;
   } else if (filter === 'In progress') {
@@ -115,7 +115,7 @@ useEffect(() => {
 
 const filterChange = (filter) => {
   setFilter(filter);
-}*/
+}
 
     return (
       <div className = { styles.wrap }>

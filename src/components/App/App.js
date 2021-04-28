@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+
+
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
@@ -7,7 +9,6 @@ import styles from './App.module.css';
 const App = () => {
   const initialState = {
       isError: false,
-      filter: 'all',
       todo: '',
       items: [
           {
@@ -37,12 +38,12 @@ const [ isError, setIsError ] = useState(initialState.isError);
 const [ clickbox, setClickBox ] = useState(initialState.clickbox);
 
 useEffect(() => {
-  console.log('mount');
+  console.log('update') ;
 });
 
 useEffect(() => {
-  console.log('update');
-});
+  console.log('mount');
+}, []);
 
   const onClickDone = (id, isDone) => {
     const newListItems = items.map(item => {
@@ -74,6 +75,26 @@ useEffect(() => {
 
   const onClickBox = isDone => {
         setClickBox((clickbox) => clickbox + 1);
+  };
+
+  const onClickInProgress = isDone => {
+    const newItemsProgress = items.filter(item => item.isDone === false);
+
+    setItems(newItemsProgress);
+    console.log(newItemsProgress);  
+  };
+
+  const onClickCompleted = isDone => {
+    const newItemsCompleted = items.filter(item => item.isDone === true);
+
+    setItems(newItemsCompleted);
+  };
+
+  const onClickAll = () => {
+    const allItems = initialState.items;
+
+    setItems(allItems);
+    console.log(allItems);
   };
 
   const onClickAdd = value => {
@@ -111,6 +132,9 @@ useEffect(() => {
           count = { count }
           clickbox = { clickbox }
           onClickBox = { onClickBox }
+          onClickInProgress = { onClickInProgress }
+          onClickCompleted = { onClickCompleted }
+          onClickAll = { onClickAll }
         />
       </div>);
 }

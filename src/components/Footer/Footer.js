@@ -2,23 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Footer.module.css';
 
-const Footer = ({ count, clickbox, onClickInProgress, onClickCompleted, onClickAll }) => (<div className = { styles.footer }>
+const Footer = ({ count, clickbox, filterItems }) => (<div className = { styles.footer }>
 <p className = { styles.tasks }>Task(s) left: { count }</p>
 <div className = { styles.filter}>
-    <p className = { styles.all }
-    onClick = { onClickAll }>All</p>
-    <p className = { styles.completed }
-    onClick = { onClickCompleted }>Completed</p>
-    <p className = { styles.inprogress }
-    onClick = { onClickInProgress }>In progress</p>
+    <button className = { styles.all }
+    value = 'All'
+    onClick = { filterItems }>All</button>
+    <button className = { styles.completed }
+    onClick = { filterItems }
+    value = 'Completed'>Completed</button>
+    <button className = { styles.inprogress }
+    onClick = { filterItems }
+    value = 'In progress'>In progress</button>
 </div>
-<p className = { styles.delete }>Delete completed: { clickbox }</p>
+<button className = { styles.delete }
+onClick = { filterItems }
+value = 'Delete completed'>Delete completed: { clickbox }</button>
 </div>);
 
 Footer.defaultProps = {
     count: 0,
-    clickbox: 0,
-    filter: 'All'
+    clickbox: 0
 };
 
 Footer.propTypes = {

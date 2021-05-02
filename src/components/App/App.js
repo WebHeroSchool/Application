@@ -9,7 +9,6 @@ import styles from './App.module.css';
 const App = () => {
   const initialState = {
       isError: false,
-      todo: '',
       items: [
           {
               value: 'Написать приложение',
@@ -28,6 +27,7 @@ const App = () => {
               id: 4
           }
       ],
+      filter: [],
       count: 4,
       clickbox: 0 
   };
@@ -36,6 +36,7 @@ const [ items, setItems ] = useState(initialState.items);
 const [ count, setCount ] = useState(initialState.count);
 const [ isError, setIsError ] = useState(initialState.isError);
 const [ clickbox, setClickBox ] = useState(initialState.clickbox);
+const [ filter, setFilter ] = useState(initialState.filter);
 
 useEffect(() => {
   console.log('update') ;
@@ -77,25 +78,29 @@ useEffect(() => {
         setClickBox((clickbox) => clickbox + 1);
   };
 
-  const onClickInProgress = isDone => {
-    const newItemsProgress = items.filter(item => item.isDone === false);
+  const filterItems = e => {
+    let filter;
 
-    setItems(newItemsProgress);
-    console.log(newItemsProgress);  
+    switch (e.target.value) {
+      default:
+        filter = items;
+        break;
+      case "Completed":
+        filter = items.filter(item => item.isDone === true );
+        break;
+      case "In progress":
+        filter = items.filter(item => item.isDone !== true );
+        break;
+      case "All":
+        filter = items;
+    }
+    
+    console.log(items);
+
+    setItems(filter);
+    setFilter(items);
   };
 
-  const onClickCompleted = isDone => {
-    const newItemsCompleted = items.filter(item => item.isDone === true);
-
-    setItems(newItemsCompleted);
-  };
-
-  const onClickAll = () => {
-    const allItems = initialState.items;
-
-    setItems(allItems);
-    console.log(allItems);
-  };
 
   const onClickAdd = value => {
       const newItems = [
@@ -132,9 +137,8 @@ useEffect(() => {
           count = { count }
           clickbox = { clickbox }
           onClickBox = { onClickBox }
-          onClickInProgress = { onClickInProgress }
-          onClickCompleted = { onClickCompleted }
-          onClickAll = { onClickAll }
+          filter = { filter }
+          filterItems = { filterItems }
         />
       </div>);
 }

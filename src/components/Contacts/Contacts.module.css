@@ -1,0 +1,11 @@
+.title {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: darkcyan;
+}
+
+.wrap {
+    margin: auto;
+    width: 550px;
+}

@@ -53,7 +53,7 @@ Item.propTypes = {
         PropTypes.string,
         PropTypes.number
     ]),
-    /*isDone: PropTypes.bool.isRequired,*/
+    isDone: PropTypes.bool.isRequired,
     id: PropTypes.number.isRequired
 };
 

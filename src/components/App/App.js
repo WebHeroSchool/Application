@@ -1,146 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Card from '@material-ui/core/Card';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
 
+import Todo from '../Todo/Todo';
+import About from '../About/About';
+import Contacts from '../Contacts/Contacts';
 
-import InputItem from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-const App = () => {
-  const initialState = {
-      isError: false,
-      items: [
-          {
-              value: 'Написать приложение',
-              id: 1
-          },
-          {
-              value: 'Прописать README',
-              id: 2
-          },
-          {
-              value: 'Пофиксить баги',
-              id: 3
-          },
-          {
-              value: 'Сдать проект',
-              id: 4
-          }
-      ],
-      filter: [],
-      count: 4,
-      clickbox: 0 
-  };
+const App = () =>
+(<Router>
+  <div className = { styles.wrap }>
 
-const [ items, setItems ] = useState(initialState.items);
-const [ count, setCount ] = useState(initialState.count);
-const [ isError, setIsError ] = useState(initialState.isError);
-const [ clickbox, setClickBox ] = useState(initialState.clickbox);
-const [ filter, setFilter ] = useState(initialState.filter);
+    <Card className = { styles.sidebar }>
+      <MenuList>
+        <Link to = '/' className = { styles.link }><MenuItem>About</MenuItem></Link>
+        <Link to = '/todo' className = { styles.link }><MenuItem>Tasks</MenuItem></Link>
+        <Link to = '/contacts' className = { styles.link }><MenuItem>Contacts</MenuItem></Link>
+      </MenuList>
+    </Card>
 
-useEffect(() => {
-  console.log('update') ;
-});
+    <Card className = { styles.content }>
+      <Route path = '/' exact component = { About } />
+      <Route path = '/todo' component = { Todo } />
+      <Route path = '/contacts' component = { Contacts } />
+    </Card>
+  </div>
+</Router>);
 
-useEffect(() => {
-  console.log('mount');
-}, []);
-
-  const onClickDone = (id, isDone) => {
-    const newListItems = items.map(item => {
-      const newItem = { ...item };
-
-      if (item.id === id) {
-        newItem.isDone = !item.isDone;
-      }
-
-      return newItem;
-    });
-
-  if (isDone === false) {
-    setItems(newListItems);
-    setClickBox((clickbox) => clickbox + 1);
-  } else {
-    setItems(newListItems);
-    setClickBox((clickbox) => clickbox - 1);
-    }
-  };
-
-  const onClickDelete = id => {
-    const newItems = items.filter(item => item.id !== id);  
-
-    setItems(newItems);
-    setCount((count) => count - 1);
-    setClickBox((clickbox) => clickbox - 1);
-  };
-
-  const onClickBox = isDone => {
-        setClickBox((clickbox) => clickbox + 1);
-  };
-
-  const filterItems = e => {
-    let filter;
-
-    switch (e.target.value) {
-      default:
-        filter = items;
-        break;
-      case "Completed":
-        filter = items.filter(item => item.isDone === true );
-        break;
-      case "In progress":
-        filter = items.filter(item => item.isDone !== true );
-        break;
-      case "All":
-        filter = items;
-    }
-    
-    console.log(items);
-
-    setItems(filter);
-    setFilter(items);
-  };
-
-
-  const onClickAdd = value => {
-      const newItems = [
-        ...items,
-            {
-              value,
-              isDone: false,
-              id: count + 1
-            }            
-      ];
-
-  if ( value !== '') {
-  setIsError(false)
-  setCount((count) => count + 1); 
-  setItems(newItems)
-  } else {
-  setIsError(true)
-  }  
-};
-
-    return (
-      <div className = { styles.wrap }>
-        <h1 className = { styles.title }>TODOLIST</h1>
-        <InputItem 
-          onClickAdd = { onClickAdd }
-          isError = { isError } 
-        />
-        <ItemList 
-          items = { items } 
-          onClickDone = { onClickDone } 
-          onClickDelete = { onClickDelete } 
-        />
-        <Footer
-          count = { count }
-          clickbox = { clickbox }
-          onClickBox = { onClickBox }
-          filter = { filter }
-          filterItems = { filterItems }
-        />
-      </div>);
-}
-
-export default App; 
+export default App;

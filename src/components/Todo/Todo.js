@@ -9,6 +9,8 @@ import styles from './Todo.module.css';
 const Todo = () => {
   const initialState = {
       isError: false,
+      isErrorSame: false,
+      isSuccess: false,
       items: [
           {
               value: 'Написать приложение',
@@ -35,6 +37,8 @@ const Todo = () => {
 const [ items, setItems ] = useState(initialState.items);
 const [ count, setCount ] = useState(initialState.count);
 const [ isError, setIsError ] = useState(initialState.isError);
+const [ isErrorSame, setIsErrorSame ] = useState(initialState.isErrorSame);
+const [ isSuccess, setIsSuccess ] = useState(initialState.isSuccess);
 const [ clickbox, setClickBox ] = useState(initialState.clickbox);
 const [ filter, setFilter ] = useState(initialState.filter);
 
@@ -95,37 +99,51 @@ useEffect(() => {
         filter = items;
     }
     
-    console.log(items);
+//  console.log(items);
 
     setItems(filter);
     setFilter(items);
   };
   
-  const onClickAdd = value => {
-      const newItems = [
-        ...items,
-            {
-              value,
-              isDone: false,
-              id: count + 1
-            }            
-      ];
+const onClickAdd = value => {
+  const newItems = [
+    ...items,
+      {
+        value,
+        isDone: false,
+        id: count + 1
+      }            
+  ];
 
-  if ( value !== '') {
-  setIsError(false)
-  setCount((count) => count + 1); 
-  setItems(newItems)
-  } else {
-  setIsError(true)
-  }  
+  items.forEach(item => {
+    if ( value === '' ) {
+      setIsError(true);
+      setItems(items);
+    } else if ( value === item.value ) {
+      setIsErrorSame(true);
+      setItems(items);
+      console.log(item.value);
+      console.log(value);
+    } else {
+      setIsError(false);
+      setIsErrorSame(false);
+      setIsSuccess(true);
+      setCount((count) => count + 1);
+      setItems(newItems);
+    }
+  });
+
 };
+
 
     return (
       <div className = { styles.wrap }>
         <h1 className = { styles.title }>TODOLIST</h1>
         <InputItem 
           onClickAdd = { onClickAdd }
-          isError = { isError } 
+          isError = { isError }
+          isErrorSame = { isErrorSame } 
+          isSuccess = { isSuccess }
         />
         <ItemList 
           items = { items } 

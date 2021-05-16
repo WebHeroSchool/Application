@@ -22,23 +22,34 @@ class InputItem extends React.Component {
   render() {
     //const { onClickAdd } = this.props;
 
-    const error = this.props.isError;
+    const errorEmpty = this.props.isError;
+    const errorSame = this.props.isErrorSame;
+    const success = this.props.isSuccess;
+    
+    
     let alert;
 
-    if (error) {
-      alert = <Alert 
-      severity="error">This field cannot be empty!
-      </Alert>
-    } else {
-			alert = ''
-		}
+      if ( errorEmpty ) {
+        alert = <Alert 
+        severity="error">This field cannot be empty!
+        </Alert>
+		  } else if ( errorSame ) {
+        alert = <Alert 
+        severity="error">This task has already been added!
+        </Alert>
+      } else if ( success ) {
+        alert = <Alert 
+        severity="success">Your task successfully added!
+        </Alert>
+      } else {
+        alert = ''
+      }
 
     return (<div className = { styles.input }>
     
     <div>
       { alert }
     </div>
-   
 
     <TextField 
       id="standard-helperText"
@@ -51,7 +62,7 @@ class InputItem extends React.Component {
       }}
       label="What would you want to add?"
       value = { this.state.InputValue }
-      onChange = {event => this.setState({ InputValue: event.target.value.toUpperCase() })}
+      onChange = {event => this.setState({ InputValue: event.target.value })}
     />
 
     <Button 

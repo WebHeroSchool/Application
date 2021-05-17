@@ -39,7 +39,7 @@ class InputItem extends React.Component {
         </Alert>
       } else if ( success ) {
         alert = <Alert 
-        severity="success">Your task successfully added!
+        onClose={() => {}}>Your task was successfully added!
         </Alert>
       } else {
         alert = ''

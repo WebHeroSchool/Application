@@ -115,7 +115,26 @@ const onClickAdd = value => {
       }            
   ];
 
-  items.forEach(item => {
+// items.forEach(item => {
+const InputValidation = items.every(item => items.value === value || value === '');
+console.log(items);
+console.log(value);
+console.log(items.value);
+
+
+console.log( InputValidation );
+if ( InputValidation === true ) {
+  setIsError(true);
+  setItems(items);
+} else if ( InputValidation === false ) {
+  setIsError(false);
+  setIsErrorSame(false);
+  setIsSuccess(true);
+  setCount((count) => count + 1);
+  setItems(newItems);
+}
+
+/*  items.forEach(item => {
     if ( value === '' ) {
       setIsError(true);
       setItems(items);
@@ -131,10 +150,10 @@ const onClickAdd = value => {
       setCount((count) => count + 1);
       setItems(newItems);
     }
-  });
+  });*/
 
-};
-
+//  });
+}
 
     return (
       <div className = { styles.wrap }>

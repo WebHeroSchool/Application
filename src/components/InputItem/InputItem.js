@@ -2,8 +2,8 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import styles from './InputItem.module.css';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
+import { Trans } from 'react-i18next';
 
 
 class InputItem extends React.Component {
@@ -20,60 +20,58 @@ class InputItem extends React.Component {
   }
 
   render() {
-    //const { onClickAdd } = this.props;
-
     const errorEmpty = this.props.isError;
     const errorSame = this.props.isErrorSame;
     const success = this.props.isSuccess;
+    const edited = this.props.isEdited;
+      let alert;
     
-    
-    let alert;
-
       if ( errorEmpty ) {
         alert = <Alert 
-        severity="error">This field cannot be empty!
+        severity = "error"><Trans i18nKey = "description.InputItem__empty">This field cannot be empty!</Trans>
         </Alert>
 		  } else if ( errorSame ) {
         alert = <Alert 
-        severity="error">This task has already been added!
+        severity = "error"><Trans i18nKey = "description.InputItem__same">This task has already been added!</Trans>
         </Alert>
       } else if ( success ) {
         alert = <Alert 
-        onClose={() => {}}>Your task was successfully added!
+        severity = "success"><Trans i18nKey = "description.InputItem__success">Your task was successfully added!</Trans>
+        </Alert>
+      } else if ( edited ) {
+        alert = <Alert 
+        severity = "warning"><Trans i18nKey = "description.InputItem__edited">Your task was successfully edited!</Trans>
         </Alert>
       } else {
         alert = ''
-      }
+      };
 
-    return (<div className = { styles.input }>
+    return (
     
-    <div>
-      { alert }
-    </div>
-
-    <TextField 
-      id="standard-helperText"
-      style={{ margin: 8 }}
-      placeholder="Add new task"
-      fullWidth
-      margin="normal"
-      InputLabelProps={{
-        shrink: true,
-      }}
-      label="What would you want to add?"
-      value = { this.state.InputValue }
-      onChange = {event => this.setState({ InputValue: event.target.value })}
-    />
-
-    <Button 
-      variant="contained" 
-      color="primary" 
-      className = { styles.create }
-      onClick = { this.onButtonClick } 
-    >
-      Create 
-    </Button>
-</div>);
+        <div className = { styles.input }>
+            <div className = { styles.alert }>
+              { alert }
+            </div>
+          <TextField 
+            id = "standard-helperText" 
+            style = {{ marginRight: 11 }}
+            fullWidth
+            margin = "normal"
+            InputLabelProps={{
+              shrink: true
+            }}
+            value = { this.state.InputValue }
+            onChange = {event => this.setState({ InputValue: event.target.value })}
+          />
+          <button 
+            variant="contained" 
+            color = "primary" 
+            className = { styles.create }
+            onClick = { this.onButtonClick } 
+          >
+            <Trans i18nKey = "description.InputItem__create">CREATE</Trans> 
+          </button>
+        </div>);
   }
 };
 

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import notes from './img/notes.ico'
 import styles from './ItemList.module.css';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { Trans } from 'react-i18next';
 
 
 const ItemList = ({ items, onClickDone, onClickDelete, dragStartHandler, dragEndHandler, dragOverHandler, dropHandler, sortItems, editItem, newValue, setNewValue, newItemValue }) => {
@@ -11,7 +12,7 @@ const ItemList = ({ items, onClickDone, onClickDelete, dragStartHandler, dragEnd
         return (
             <div className = { styles.empty__wrapper}>
                 <img src = { notes } alt = 'Error' className = { styles.empty__logo } />
-                <h3 className = { styles.empty__text}>It is the best time to fill your list up!</h3>
+                <h3 className = { styles.empty__text}><Trans i18nKey = "description.ItemList">It is the best time to fill your list up!</Trans></h3>
             </div>
         )
     } else {

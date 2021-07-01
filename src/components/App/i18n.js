@@ -60,6 +60,7 @@ i18n
             InputItem__edited: 'Your task was successfully edited!',
             InputItem__deleted: 'Your task was successfully deleted!',
             InputItem__create: 'CREATE',
+            ItemList: 'It is the best time to fill your list up!',
           }
         }  
       },
@@ -97,6 +98,7 @@ i18n
             InputItem__edited: 'Задача успешно изменена!',
             InputItem__deleted: 'Задача успешно удалена!',
             InputItem__create: 'СОЗДАТЬ',
+            ItemList: 'Самое время действовать!',
           }
         }  
       } 

@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/Application/static/css/main.f564fb60.chunk.css",
+    "main.js": "/Application/static/js/main.e1c098a1.chunk.js",
+    "main.js.map": "/Application/static/js/main.e1c098a1.chunk.js.map",
+    "runtime-main.js": "/Application/static/js/runtime-main.143a0eb0.js",
+    "runtime-main.js.map": "/Application/static/js/runtime-main.143a0eb0.js.map",
+    "static/js/2.f9dd54c6.chunk.js": "/Application/static/js/2.f9dd54c6.chunk.js",
+    "static/js/2.f9dd54c6.chunk.js.map": "/Application/static/js/2.f9dd54c6.chunk.js.map",
+    "index.html": "/Application/index.html",
+    "static/css/main.f564fb60.chunk.css.map": "/Application/static/css/main.f564fb60.chunk.css.map",
+    "static/js/2.f9dd54c6.chunk.js.LICENSE.txt": "/Application/static/js/2.f9dd54c6.chunk.js.LICENSE.txt",
+    "static/media/ModeLogo.a3814ccb.ico": "/Application/static/media/ModeLogo.a3814ccb.ico",
+    "static/media/UsaLogo.b8d838f3.ico": "/Application/static/media/UsaLogo.b8d838f3.ico",
+    "static/media/document.15810c27.gif": "/Application/static/media/document.15810c27.gif",
+    "static/media/error.e36e014a.svg": "/Application/static/media/error.e36e014a.svg",
+    "static/media/fork.fa418bb5.svg": "/Application/static/media/fork.fa418bb5.svg",
+    "static/media/github.d1bb13ce.svg": "/Application/static/media/github.d1bb13ce.svg",
+    "static/media/gmail.7bf1a224.svg": "/Application/static/media/gmail.7bf1a224.svg",
+    "static/media/location.511f1bc3.svg": "/Application/static/media/location.511f1bc3.svg",
+    "static/media/mail.e3ffc26c.svg": "/Application/static/media/mail.e3ffc26c.svg",
+    "static/media/notes.f4eca943.ico": "/Application/static/media/notes.f4eca943.ico",
+    "static/media/russiaLogo.078e6709.ico": "/Application/static/media/russiaLogo.078e6709.ico",
+    "static/media/star.48b542f4.svg": "/Application/static/media/star.48b542f4.svg",
+    "static/media/telegram.da27cc00.svg": "/Application/static/media/telegram.da27cc00.svg",
+    "static/media/upwork.816941b2.svg": "/Application/static/media/upwork.816941b2.svg",
+    "static/media/vk.27011227.svg": "/Application/static/media/vk.27011227.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.143a0eb0.js",
+    "static/js/2.f9dd54c6.chunk.js",
+    "static/css/main.f564fb60.chunk.css",
+    "static/js/main.e1c098a1.chunk.js"
+  ]
+}

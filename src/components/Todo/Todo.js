@@ -13,6 +13,7 @@ const Todo = () => {
       isErrorSame: false,
       isSuccess: false,
       isEdited: false,
+      isDeleted: false,
      /* items: [
           {
               value: 'Написать приложение',
@@ -60,6 +61,7 @@ const [ isError, setIsError ] = useState(initialState.isError);
 const [ isErrorSame, setIsErrorSame ] = useState(initialState.isErrorSame);
 const [ isSuccess, setIsSuccess ] = useState(initialState.isSuccess);
 const [ isEdited, setIsEdited ] = useState(initialState.isEdited);
+const [ isDeleted, setIsDeleted ] = useState(initialState.isDeleted);
 const [ clickbox, setClickBox ] = useState(initialState.clickbox);
 const [ filter, setFilter ] = useState(initialState.filter);
 const [ currentItem, setCurrentItem ] = useState(initialState.null);
@@ -95,7 +97,12 @@ useEffect(() => {
   const onClickDelete = id => {
     const newItems = items.filter(item => item.id !== id);  
 
-    setItems(newItems);
+    setItems(newItems)
+    setIsDeleted(true)
+
+    setTimeout(() => {
+      setIsDeleted(false)
+    }, 1500);
     
   if (count === 0) {
     setCount(count)
@@ -115,9 +122,13 @@ useEffect(() => {
 			return !item.isDone; 
 		});
 		  setItems(newItemList)
+      setIsDeleted(true)
       setClickBox((clickbox) => clickbox = 0)
       setCount((count) => count - (count - newItemList.length))
 
+      setTimeout(() => {
+        setIsDeleted(false)
+      }, 1500);
 	};
 
 
@@ -170,6 +181,7 @@ useEffect(() => {
       setIsError(false)
       setIsErrorSame(false)
       setIsSuccess(false)
+      setIsDeleted(false)
     }, 1500);
 
   const inputValidationSame = items.find(item => {
@@ -299,6 +311,7 @@ useEffect(() => {
             isErrorSame = { isErrorSame } 
             isSuccess = { isSuccess }
             isEdited = { isEdited }
+            isDeleted = { isDeleted }
           />
           <ItemList 
             items = { filterItems } 

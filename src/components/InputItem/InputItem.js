@@ -24,6 +24,7 @@ class InputItem extends React.Component {
     const errorSame = this.props.isErrorSame;
     const success = this.props.isSuccess;
     const edited = this.props.isEdited;
+    const deleted = this.props.isDeleted;
       let alert;
     
       if ( errorEmpty ) {
@@ -41,6 +42,10 @@ class InputItem extends React.Component {
       } else if ( edited ) {
         alert = <Alert 
         severity = "warning"><Trans i18nKey = "description.InputItem__edited">Your task was successfully edited!</Trans>
+        </Alert>
+      } else if ( deleted ) {
+        alert = <Alert 
+        severity = "success"><Trans i18nKey = "description.InputItem__deleted">Your task was successfully deleted!</Trans>
         </Alert>
       } else {
         alert = ''

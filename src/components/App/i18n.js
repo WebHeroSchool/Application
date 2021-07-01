@@ -58,7 +58,7 @@ i18n
             InputItem__same: 'This task has already been added!',
             InputItem__success: 'Your task was successfully added!',
             InputItem__edited: 'Your task was successfully edited!',
-
+            InputItem__deleted: 'Your task was successfully deleted!',
             InputItem__create: 'CREATE',
           }
         }  
@@ -95,6 +95,7 @@ i18n
             InputItem__same: 'Эта задача уже была добавлена!',
             InputItem__success: 'Задача успешно добавлена!',
             InputItem__edited: 'Задача успешно изменена!',
+            InputItem__deleted: 'Задача успешно удалена!',
             InputItem__create: 'СОЗДАТЬ',
           }
         }  

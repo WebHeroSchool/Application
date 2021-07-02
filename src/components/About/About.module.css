@@ -1,0 +1,337 @@
+.wrap {
+    margin: auto;
+    width: 600px;
+    padding: 0 15px;
+}
+
+.title {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: darkcyan;
+}
+
+.login {
+    font-size: 30px;
+    font-weight: 1000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.repo__wrapper {
+    display: flex;
+    margin: 10px;
+    margin-left: 0;
+    margin-right: 7px;
+    padding: 7px;
+    font-family: monospace;
+}
+
+.avatar__wrapper {
+    display: flex;
+    margin: 7px 0px 7px 7px;
+}
+
+.avatar {
+    height: 250px; 
+    width: 250px;
+    border-radius: 10%;
+}
+
+.repo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 7px;
+    font-family: monospace;
+}
+
+.profile {
+    text-align: center;
+    font-size: 26px;
+    font-family: monospace;
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(2, 86, 134, 0.2);
+    padding: .3em 1em;
+    outline: none;
+    border-radius: 10px;
+    background: linear-gradient(rgb(110,112,120), rgb(39, 39, 88)) rgb(0,139,139);
+    box-shadow: 0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0, 3, 6, 0.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+
+.profile:hover {
+    cursor: inherit;
+}
+
+.bio {
+    font-size: 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bio__art {
+    font-weight: 900;
+}
+
+.location {
+    display: flex;
+    font-family: monospace;
+    text-decoration: none;
+    font-style: oblique;
+    font-size: 18px;
+    color: inherit;
+    margin: 0px;
+    padding: 0px;
+    transition: .5;
+    opacity: .5;
+}
+
+.location:hover {
+    opacity: 1;
+}
+
+.location__logo {
+    width: 20px;
+    height: 20px;
+}
+
+.repoTitle {
+    text-align: center;
+    font-size: 16px;
+    font-family: monospace;
+    cursor: inherit;
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(2, 86, 134, 0.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 10px;
+    background: linear-gradient(rgb(110,112,120), rgb(39, 39, 88)) rgb(0,139,139);
+    box-shadow:
+     0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0, 3, 6, 0.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+
+.repoTitle:hover {
+    cursor: inherit;
+}
+
+.wrapper {
+    font-family: monospace;
+    margin: 10px;
+    margin-left: 0;
+    padding: 0px;
+}
+
+.error__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    margin: auto;
+}
+
+
+.error__logo {
+    width: 600px;
+    height: 300px;
+    margin: auto;
+    padding: 10px;
+}
+
+.error__text {
+    text-align: center;
+    font-family: monospace;
+}
+
+@media (max-width: 800px) {
+
+    .wrap {
+        max-width: 400px;
+        margin: auto;
+    }
+    .title {
+        font-size: 35px;
+    }
+
+    .profile {
+        font-size: 20px;
+    }
+
+    .avatar {
+        height: 165px; 
+        width: 165px;
+    }
+
+    .repo {
+        margin: 5px;
+        padding: 4px;
+    }
+
+    .login {
+        font-size: 20px;
+    }
+    
+    .bio {
+        font-size: 14px;
+    }
+    
+    .location {
+        font-size: 12px;
+    }
+    
+    .location__logo {
+        width: 15px;
+        height: 15px;
+    }
+
+    .repoTitle {
+        font-size: 13px;
+        padding: .4em 1em;
+    }
+
+    .wrapper {
+        margin: 2px;
+    }
+
+    .error__logo {
+        width: 400px;
+    }
+
+}
+
+@media (max-width: 570px) {
+
+    .wrap {
+        max-width: 300px; 
+        min-height: 43vh;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .profile {
+        font-size: 15px;
+    }
+
+    .repo__wrapper {
+        margin: 7px;
+        margin-left: 0;
+        margin-right: 7px;
+        padding: 3px;
+    }
+
+    .avatar {
+        height: 120px; 
+        width: 120px;
+    }
+
+    .repo {
+        margin: 3px;
+        padding: 2px;
+    }
+
+    .login {
+        font-size: 14px;
+    }
+    
+    .bio {
+        font-size: 11px;
+    }
+    
+    .location {
+        font-size: 10px;
+    }
+    
+    .location__logo {
+        width: 10px;
+        height: 10px;
+    }
+
+    .repoTitle {
+        font-size: 10px;
+        padding: .3em 1em;
+        margin: 20px 0;
+    }
+
+    .wrapper {
+        margin: 0px;
+    }
+
+    .error__container {
+        padding: 0;
+    }
+
+    .error__logo {
+        width: 300px;
+    }
+}
+
+@media (max-width: 464px) {
+    .wrap {
+        min-width: 300px;
+        max-width: 300px;
+        padding: 0 5px;
+        min-height: 90vh;
+    }
+
+    .error__logo {
+        width: 290px;
+    }
+}
+
+@media (max-width: 426px) {
+    .wrap {
+        padding: 5px;
+    }
+
+    .error__logo {
+        width: 285px;
+    }
+}
+
+@media (max-width: 376px) {
+
+    .wrap {
+        min-width: 246px;
+        max-width: 246px;
+    }
+
+    .repo {
+        margin: 3px;
+        padding: 2px;
+    }
+
+    .login {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+    
+    .bio {
+        font-size: 10px;
+        line-height: 0.9;
+    }
+
+    .bio__art {
+        font-weight: 600;
+        line-height: 0.85;
+    }
+    
+    .location {
+        font-size: 9px;
+        line-height: 0.9;
+    }
+
+    .error__logo {
+        width: 235px;
+    }
+}
+

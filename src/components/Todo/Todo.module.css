@@ -1,0 +1,61 @@
+.wrap {
+    margin: auto;
+    min-width: 600px;
+    padding: 0 15px;
+}
+
+.title {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    color: darkcyan;
+}
+
+@media (max-width: 800px) {
+
+    .wrap {
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 570px) {
+    
+    .wrap {
+        max-width: 300px;
+        min-width: 300px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 464px) {
+
+    .wrap {
+        max-width: 290px;
+        max-width: 290px;
+        padding: 0 5px;
+        min-height: 90vh;
+    }
+}
+
+@media (max-width: 426px) {
+   
+    .wrap {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 376px) {
+
+    .wrap {
+        min-width: 246px;
+        max-width: 246px;
+    }
+}

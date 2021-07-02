@@ -1,0 +1,282 @@
+.footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 5px;
+    margin-bottom: 4px;
+}
+
+.tasks {
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 90%;
+    font-weight: 700;
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(2, 86, 134, 0.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 10px;
+    background: linear-gradient(rgb(110,112,120), rgb(39, 39, 88)) rgb(0,139,139);
+    box-shadow:
+     0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0, 3, 6, 0.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    cursor: pointer;
+}
+
+.all {
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 90%;
+    font-weight: 700;
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(2, 86, 134, 0.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 10px;
+    background: linear-gradient(rgb(110,112,120), rgb(39, 39, 88)) rgb(0,139,139);
+    box-shadow:
+     0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0, 3, 6, 0.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+
+.all:hover {
+    border-bottom: 2px solid gray;
+    cursor: pointer;
+}
+
+.all:hover:not(:active) {
+    background: linear-gradient(rgb(38, 38, 182), rgb(70,71,76)) rgb(126,126,134);
+  }
+
+.all:active {
+    top: 1px;
+    background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+    box-shadow:
+     0 0 1px rgba(0,0,0,.5) inset,
+     0 2px 3px rgba(0,0,0,.5) inset,
+     0 1px 1px rgba(255,255,255,.1);
+  }
+
+.completed {
+    padding: 0 4px 0 4px;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 90%;
+    font-weight: 700;
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(2, 86, 134, 0.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 10px;
+    background: linear-gradient(rgb(110,112,120), rgb(39, 39, 88)) rgb(0,139,139);
+    box-shadow:
+     0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0, 3, 6, 0.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+
+.completed:hover {
+    border-bottom: 2px solid gray;
+    cursor: pointer;
+}
+
+.completed:hover:not(:active) {
+    background: linear-gradient(rgb(38, 38, 182), rgb(70,71,76)) rgb(126,126,134);
+  }
+
+.completed:active {
+    top: 1px;
+    background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+    box-shadow:
+     0 0 1px rgba(0,0,0,.5) inset,
+     0 2px 3px rgba(0,0,0,.5) inset,
+     0 1px 1px rgba(255,255,255,.1);
+  }
+
+.inprogress {
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 90%;
+    font-weight: 700;
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(2, 86, 134, 0.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 10px;
+    background: linear-gradient(rgb(110,112,120), rgb(39, 39, 88)) rgb(0,139,139);
+    box-shadow:
+     0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0, 3, 6, 0.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+
+.inprogress:hover {
+    border-bottom: 2px solid gray;
+    cursor: pointer;
+}
+
+.inprogress:hover:not(:active) {
+    background: linear-gradient(rgb(38, 38, 182), rgb(70,71,76)) rgb(126,126,134);
+  }
+
+.inprogress:active {
+    top: 1px;
+    background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+    box-shadow:
+     0 0 1px rgba(0,0,0,.5) inset,
+     0 2px 3px rgba(0,0,0,.5) inset,
+     0 1px 1px rgba(255,255,255,.1);
+  }
+
+.delete {
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 90%;
+    font-weight: 700;
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(2, 86, 134, 0.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 10px;
+    background: linear-gradient(rgb(110,112,120), rgb(39, 39, 88)) rgb(0,139,139);
+    box-shadow:
+     0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0, 3, 6, 0.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+
+.delete:hover {
+    border-bottom: 2px solid gray;
+    cursor: pointer;
+}
+
+.delete:hover:not(:active) {
+    background: linear-gradient(rgb(38, 38, 182), rgb(70,71,76)) rgb(126,126,134);
+  }
+  
+.delete:active {
+    top: 1px;
+    background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+    box-shadow:
+     0 0 1px rgba(0,0,0,.5) inset,
+     0 2px 3px rgba(0,0,0,.5) inset,
+     0 1px 1px rgba(255,255,255,.1);
+  }
+
+@media (max-width: 800px) {
+    .filter {
+        width: 50%;
+    }
+
+    .tasks {
+        font-size: 63%;
+        padding: .5em 0.5em;
+    }
+
+    .all {
+        font-size: 63%;
+        padding: .5em 0.5em;
+    }
+
+    .completed {
+        font-size: 63%;
+        padding: .5em 0.5em;
+    }
+    
+    .inprogress {
+        font-size: 63%;
+        padding: .5em 0.5em;
+    }
+
+    .delete {
+        font-size: 63%;
+        padding: .5em 0.5em;
+    }
+}
+
+@media (max-width: 570px) {
+    
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .filter {
+        width: 90%;
+        margin: 15px 0px;
+    }
+
+    .tasks {
+        width: 55%;
+        font-size: 90%;
+        padding: .3em 0.5em;
+    }
+
+    .all {
+        font-size: 90%;
+        padding: .3em 0.5em;
+    }
+
+    .completed {
+        font-size: 90%;
+        padding: .3em 0.5em;
+    }
+    
+    .inprogress {
+        font-size: 90%;
+        padding: .3em 0.5em;
+    }
+
+    .delete {
+        width: 55%;
+        font-size: 90%;
+        padding: .3em 0.5em;
+    }
+}
+
+@media (max-width: 376px) {
+
+    .footer {
+        padding: 2px;
+        margin-bottom: 2px;
+        font-size: 80%;
+    }
+
+    .filter {
+        width: 99%;
+    }
+}

@@ -1,0 +1,39 @@
+.item {
+    color: inherit;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.item__dark {
+    color: white;
+}
+
+.done {
+    opacity: 0.2;
+}
+
+.container {
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 2px solid rgb(139, 139, 139);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    margin-bottom: 4px;
+}
+
+.basket {
+    opacity: 0.2;
+}
+
+.basket:hover {
+    opacity: 1;
+}
+
+.delete {
+    display: none;
+}
+
+
+
